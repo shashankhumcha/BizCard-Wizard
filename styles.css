@@ -1,0 +1,286 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('background.jpg');
+    background-size: cover; /* Ensures the background image covers the entire viewport */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: auto;
+}
+
+.container {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-container {
+    position: relative;
+    z-index: 1; /* Ensure form is above the scrolling templates */
+    padding: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    color: #ffffff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+.card-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    width: 320px;
+    padding: 20px;
+    background-color: #333;
+    color: rgb(0, 0, 0);
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    text-align: left;
+}
+
+.card h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+.card .social-icons {
+    display: flex;
+    margin-top: 15px;
+}
+
+.card .social-icons a {
+    color: white;
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+.scrolling-templates {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 510px; /* Ensure this width fits the templates */
+    height: 300px; /* Ensure this height fits the templates */
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #ffffff;
+    z-index: 0; /* Ensure scrolling templates are below the form */
+    padding: 0; /* Remove padding to avoid extra space */
+}
+
+.scrolling-templates.left {
+    left: 20px; /* Adjust positioning as needed */
+    animation: scroll-left 10s linear infinite;
+}
+
+.scrolling-templates.right {
+    right: 20px; /* Adjust positioning as needed */
+    animation: scroll-right 10s linear infinite;
+}
+
+.template-wrapper {
+    display: flex; /* Align items horizontally */
+    flex-direction: row;
+    width: 750px; /* Adjust this width to fit all images horizontally */
+    height: 100%;
+}
+
+.template {
+    width: 280px; /* Adjust width as needed */
+    height: 280px; /* Adjust height as needed */
+    background-color: #e0e0e0;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    background-size: cover; /* Ensure the image covers the entire element */
+    background-position: center; /* Center the background image */
+}
+
+.reviews {
+    position: fixed;
+    width: 485px;
+    padding: 10px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    z-index: 0; /* Ensure reviews are below the form */
+}
+
+.reviews.left {
+    left: 20px; /* Adjust positioning as needed */
+    top: 17%; /* Adjust positioning as needed */
+    transform: translateY(-50%);
+}
+
+.reviews.right {
+    right: 20px; /* Adjust positioning as needed */
+    top: 17%; /* Adjust positioning as needed */
+    transform: translateY(-50%);
+}
+
+.review {
+    margin-bottom: 15px;
+}
+
+.star {
+    color: #FFD700;
+    font-size: 1.2em;
+}
+
+.assistant-avatar {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    width: 100px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.assistant-avatar img {
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.assistant-avatar p {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #555;
+    font-weight: bold;
+}
+
+.assistant-avatar.dynamic {
+    animation: bounce 1.5s infinite alternate;
+}
+
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+/*@keyframes scroll-left {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+}
+
+/*@keyframes scroll-right {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+}*/
+.eye-container {
+    
+    position: fixed;
+    top: 20px; /* Adjust positioning as needed */
+    left: 70%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    z-index: 500; /* Ensure the eye is above other elements */
+}
+
+.eye {
+    width: 100%;
+    height: 100%;
+    border: 3px solid #333;
+    border-radius: 50%;
+    position: relative;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pupil {
+    width: 50%;
+    height: 50%;
+    background-color: #333;
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.2s ease;
+}
+
+@keyframes scroll-up {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-100%); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes scroll-down {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+}
+.template1 {
+    padding-right: 50px;
+    background-image: url('template1.jpg');
+}
+
+.template2 {
+    background-image: url('template2.jpg');
+}
+
+.template3 {
+    background-image: url('template3.jpg');
+}
+.template-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
